@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="src/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File to GPS Map | Waypoint</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Waypoint</h1>
+      <p class="subtitle">Encode your file into a .gpx GPS Map!</p>
+      <div id="boxes">
+        <input type="file" id="file-input" hidden>
+        <label class="drop-zone" for="file-input"  id="file-to-gps">
+
+          <h2>
+            File -> GPS
+          </h2>
+          <p><i>Encodes a file to .gpx GPS map</i></p>
+          <strong>Drop a file here or choose a file</strong>
+          
+        </label>
+
+        <label class="drop-zone" for="file-input"  id="gps-to-file">
+          <h2>
+            GPS -> File
+          </h2>
+          <p><i>Decodes a .gpx GPS map to the original file (does not preserve file extention)</i></p>
+          <strong>Drop a file here or choose a file</strong>
+        </label>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

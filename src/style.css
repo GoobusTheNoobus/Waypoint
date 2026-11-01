@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "Fira Code";
+  src: url('/fonts/FiraCode-VariableFont_wght.ttf') format("truetype");
+}
+
+
+html, body {
+  background-color: #2a272b;
+  color: #f7f1f1;
+  font-family: 'Fira Code', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color:  #b2b0b0;
+  text-align: center;
+}
+
+#boxes {
+  display: flex;
+  width: 60vw;
+  margin: 3rem auto 0;
+  gap: 1rem;
+}
+
+.drop-zone{
+  width: 25vw;
+  background-color: #4d4c4c;
+  margin: 1rem;
+  padding: 1rem 2rem 2rem;
+  display:inline;
+  border: #c7c2c2 solid 2px;
+  border-radius: 20px;
+  transition: 200ms;
+}
+
+.drop-zone:hover {
+  background-color: #3d3c3c;
+}
