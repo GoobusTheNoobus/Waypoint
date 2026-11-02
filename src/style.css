@@ -43,3 +43,17 @@ h1 {
 .drop-zone:hover {
   background-color: #3d3c3c;
 }
+
+.note {
+  margin: 3rem auto 3rem;
+  width: 60vw;
+}
+
+a {
+  text-decoration: none;
+  color: #ef2f2f
+}
+
+a:hover {
+  color: #ae2424
+}
