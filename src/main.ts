@@ -36,4 +36,21 @@ dropZone.forEach((element: Element) => {
             }       
         }
     });
+
+    element.addEventListener("click", () => {
+        fileInput.click();
+    });
+
+    fileInput.addEventListener("change", () => {
+        const file = fileInput.files?.[0];
+        if (!file) return;
+
+        if (element.id == "file-to-gps") {
+            encode(file);
+        }
+            
+        else {
+            decode(file)
+        }  
+    })
 })
