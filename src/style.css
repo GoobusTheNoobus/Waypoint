@@ -155,5 +155,4 @@ html::selection {
 
 ::-webkit-scrollbar-thumb {
     background: var(--background-grid);
-    border: 3px solid var();
 }
