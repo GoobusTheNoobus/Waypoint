@@ -1,55 +1,58 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="src/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>File to GPS Map | Waypoint</title>
-  </head>
-  <body>
-    <div id="app">
-      <h1>Waypoint</h1>
-      <p class="subtitle">Encode your file into a .gpx GPS Map!</p>
-      <div id="boxes">
-        <input type="file" id="file-input" hidden>
-        <label class="drop-zone" for="file-input"  id="file-to-gps">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="src/style.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>File to GPS Map -- Waypoint</title>
+    </head>
+    <body>
+        <div id="app">
+            <p id="links">
+                <a href="https://github.com/GoobusTheNoobus/Waypoint">Repo</a> ·
+                <a href="https://tools.maxhogan.dev/gpx-viewer">GPX Viewer</a>
+            </p>
+            <h1>Waypoint</h1>
+            <p class="subtitle">Encode your file into a .gpx GPS Map!</p>
+            <div id="boxes">
+                <input type="file" id="file-input" hidden />
+                <label class="drop-zone" for="file-input" id="file-to-gps">
+                    <h2>Encode</h2>
+                    <p><i>File to GPX</i></p>
+                    <strong>Drop a file here or choose a file</strong>
+                </label>
 
-          <h2>
-            File -> GPS
-          </h2>
-          <p><i>Encodes a file to .gpx GPS map</i></p>
-          <strong>Drop a file here or choose a file</strong>
-          
-        </label>
+                <label class="drop-zone" for="file-input" id="gps-to-file">
+                    <h2>Decode</h2>
+                    <p><i>GPX to File</i></p>
+                    <strong>Drop a file here or choose a file</strong>
+                </label>
+            </div>
+            <div class="note">
+                <h2>How it works</h2>
+                <p>
+                    Waypoint encodes a file into a .gpx track using RNG.
+                    However, despite the randomness, it can still retrieve the
+                    original file content. This is because each byte is
+                    interpreted as an unsigned integer. When encoding, the
+                    direction the walker moves is random. However, the distance
+                    is the integer's value. Decoding would simply require it to
+                    calculate the distance between the current position with the
+                    next. The filename is also preserved as metadata is the
+                    encoded GPS file.
+                </p>
 
-        <label class="drop-zone" for="file-input"  id="gps-to-file">
-          <h2>
-            GPS -> File
-          </h2>
-          <p><i>Decodes a .gpx GPS map to the original file (does not preserve file extention)</i></p>
-          <strong>Drop a file here or choose a file</strong>
-        </label>
-      </div>
-      <div class="note">
-        <h2>Note: </h2>
-        <p>
-          Waypoint was developed under time constraint (to ship with bonus multipliers). As a result, 
-          I had to get help from some LLMs. Note that about 90% of the code is hand written by me. 
-          The source code is also somewhat messy, and there may be edge cases that haven't been tested
-          or accounted for.</p>
+                <p>
+                    Unfortunately, I don't have the brainpower to build a .gpx
+                    viewer within the site. I could, however I don't want to
+                    spend too much time on this. I linked an external viewer,
+                    however, it is not mine. After encoding the file, use the
+                    viewer to see what Waypoint really generated.
+                </p>
 
-        <p>
-          Given more time, I would improve the code structure, perform rigid testing, and improve
-          my code in other small ways. Also, the bad styling is not a result of the time constraint,
-          I'm simply just bad at applying CSS effectively.
-        </p>
-
-        <p>Thank you for looking at my project!</p>
-          <a href="https://github.com/GoobusTheNoobus/Waypoint">Repo</a> ·
-          <a href="https://tools.maxhogan.dev/gpx-viewer">GPX Viewer</a>
-        </p>
-      </div>
-    </div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+                <p>Thank you for looking at my project!</p>
+            </div>
+        </div>
+        <script type="module" src="/src/main.ts"></script>
+    </body>
 </html>

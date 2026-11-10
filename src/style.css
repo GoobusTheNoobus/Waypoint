@@ -1,59 +1,159 @@
-@font-face {
-  font-family: "Fira Code";
-  src: url('/fonts/FiraCode-VariableFont_wght.ttf') format("truetype");
+:root {
+    /* Variables because good practice (even though this small of a site doesn't
+    really need variables. Also screw CSS for not having single line variables */
+    --background: #ede8e4;
+    --background-grid: #e3deda;
+    --surface: #fbfaf5;
+    --surface-hover: #eeeee3;
+    --text: #263c35;
+    --muted: #6c756f;
+    --accent: #918777;
+    --border: #d8d9cd;
+
+    font-family: "Segoe UI", sans-serif;
+    color: var(--text);
+    background: var(--background);
 }
 
+* {
+    box-sizing: border-box;
+}
 
-html, body {
-  background-color: #2a272b;
-  color: #f7f1f1;
-  font-family: 'Fira Code', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+html {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--background);
+
+    /* Grid pattern */
+    background-image:
+        linear-gradient(var(--background-grid) 2px, transparent 1px),
+        linear-gradient(90deg, var(--background-grid) 2px, transparent 1px);
+    background-size: 32px 32px;
+    background-attachment: fixed;
+}
+
+#app {
+    width: min(900px, 90%);
+    margin: 0 auto;
+    padding: 4rem 0;
 }
 
 h1 {
-  font-size: 5rem;
-  text-align: center;
-  margin-bottom: 1rem;
+    font-size: clamp(3.5rem, 9vw, 5.5rem);
+    font-weight: 500;
+    margin: 1rem 0 1rem;
+    text-align: center;
+}
+
+h1::selection {
+    background-color: var(--accent);
+    color: var(--surface);
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  color:  #b2b0b0;
-  text-align: center;
+    text-align: center;
+    color: var(--muted);
+    font-size: 1.1rem;
+    font-style: italic;
+    margin: 0.5rem 0;
 }
 
 #boxes {
-  display: flex;
-  width: 60vw;
-  margin: 3rem auto 0;
-  gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: 4rem;
 }
 
-.drop-zone{
-  width: 25vw;
-  background-color: #4d4c4c;
-  margin: 1rem;
-  padding: 1rem 2rem 2rem;
-  display:inline;
-  border: #c7c2c2 solid 2px;
-  border-radius: 20px;
-  transition: 200ms;
+.drop-zone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 220px;
+    padding: 2rem;
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+
+    transition: 160ms ease;
+    user-select: none;
 }
 
 .drop-zone:hover {
-  background-color: #3d3c3c;
+    background: var(--surface-hover);
+    border-color: var(--accent);
+    transform: translateY(-10px);
+}
+
+.drop-zone h2 {
+    font-size: 1.6rem;
+    margin: -1rem 0 0.5rem;
+}
+
+.drop-zone p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0 0 2rem;
+}
+
+.drop-zone strong {
+    font-size: 1rem;
+    color: var(--accent);
 }
 
 .note {
-  margin: 3rem auto 3rem;
-  width: 60vw;
+    margin: 4rem 0 2rem;
+    padding-top: 1.5rem;
+
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.note h2 {
+    color: var(--text);
+    font-size: 1.1rem;
 }
 
 a {
-  text-decoration: none;
-  color: #ef2f2f
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 4px;
+    transition: 250ms ease;
 }
 
 a:hover {
-  color: #ae2424
+    text-decoration-color: currentColor;
+}
+
+#links {
+    text-align: center;
+    font-size: 1.1rem;
+    user-select: none;
+}
+
+html::selection {
+    background-color: var(--accent);
+    color: var(--surface-hover);
+}
+
+::-webkit-scrollbar {
+    width: 30px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--background-grid);
+    border: 3px solid var();
 }
