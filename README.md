@@ -16,3 +16,23 @@ viewer within the site. I could, however I don't want to
 spend too much time on this. I linked an external viewer,
 however, it is not mine. After encoding the file, use the
 viewer to see what Waypoint really generated.
+
+## How to run
+You need to have `node` and `npm` to run the project.
+
+To install dependencies:
+```bash
+npm install
+```
+
+To start the dev server:
+```bash
+npm run dev
+```
+
+## How to use
+On the website, there are 2 inputs boxes. The one on the left is meant for encoding, 
+while the one on the right is to decode the file back to the original. 
+
+You can see the contents of the encoded file by clicking on the GPX viewer link above the title.
+Drag the file, and you can see a long path that contains the encoded content of the file.
